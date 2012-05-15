@@ -2,7 +2,7 @@ VERSION = 3
 PATCHLEVEL = 0
 SUBLEVEL = 8
 EXTRAVERSION =
-NAME = Sneaky Weasel
+NAME = dsb9938.GTab2.7.ver.2
 
 # *DOCUMENTATION*
 # To see a list of typical targets execute "make help"
@@ -1004,7 +1004,8 @@ define filechk_utsrelease.h
 endef
 
 define filechk_version.h
-	(echo \#define LINUX_VERSION_CODE $(shell                             \
+	(echo \#define LINUX_CODE_NAME \"$(NAME)\"; \
+	echo \#define LINUX_VERSION_CODE $(shell                             \
 	expr $(VERSION) \* 65536 + 0$(PATCHLEVEL) \* 256 + 0$(SUBLEVEL));    \
 	echo '#define KERNEL_VERSION(a,b,c) (((a) << 16) + ((b) << 8) + (c))';)
 endef
