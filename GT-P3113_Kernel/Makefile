@@ -2,7 +2,7 @@ VERSION = 3
 PATCHLEVEL = 0
 SUBLEVEL = 8
 EXTRAVERSION =
-NAME = dsb9938.GTab2.7.ver.2
+NAME = dsb9938.GTab2.7.ver.3
 
 # *DOCUMENTATION*
 # To see a list of typical targets execute "make help"
