@@ -407,7 +407,6 @@ static int mmc_read_ext_csd(struct mmc_card *card, u8 *ext_csd)
 	if (card->ext_csd.rev >= 5)
 		card->ext_csd.rel_param = ext_csd[EXT_CSD_WR_REL_PARAM];
 
-<<<<<<< HEAD
 	/* eMMC v4.5 or later */
 	if (card->ext_csd.rev >= 6)
 		card->ext_csd.feature_support |= MMC_DISCARD_FEATURE;
@@ -423,9 +422,7 @@ static int mmc_read_ext_csd(struct mmc_card *card, u8 *ext_csd)
 			card->ext_csd.feature_support |= MMC_DISCARD_FEATURE;
 		}
 
-=======
 	card->ext_csd.raw_erased_mem_count = ext_csd[EXT_CSD_ERASED_MEM_CONT];
->>>>>>> cb55305... mmc: core: ext_csd.raw_* used in comparison but never set
 	if (ext_csd[EXT_CSD_ERASED_MEM_CONT])
 		card->erased_byte = 0xFF;
 	else
