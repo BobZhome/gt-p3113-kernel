@@ -851,14 +851,15 @@ retry:
 			char cur_n[TASK_COMM_LEN], tty_n[64];
 			long timeout = 3 * HZ;
 			tty_unlock();
-
-			while (tty_ldisc_wait_idle(tty, timeout) == -EBUSY) {
+			/*Commented out because of tty_ldisc.c:855: error:
+			  too many arguments to function 'tty_ldisc_wait_idle'*/
+			/*while (tty_ldisc_wait_idle(tty, timeout) == -EBUSY) {
 				timeout = MAX_SCHEDULE_TIMEOUT;
 				printk_ratelimited(KERN_WARNING
 					"%s: waiting (%s) for %s took too long, but we keep waiting...\n",
 					__func__, get_task_comm(cur_n, current),
 					tty_name(tty, tty_n));
-			}
+			}*/
 			mutex_unlock(&tty->ldisc_mutex);
 			goto retry;
 		}
